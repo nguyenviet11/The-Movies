@@ -60,25 +60,24 @@
         font-weight: 700;
         padding-right: 40px;
 
-        .icon__plus,
-        .icon__search,
-        .change__languages,
-        .login,
-        .register {
+        .manipulation__iconPlus,
+        .manipulation__iconSearch,
+        .manipulation__languages
+        {
             padding: 8px;
             margin-right: 14px;
             cursor: pointer;
         }
 
-        .icon__plus {
+        .manipulation__iconPlus {
             font-size: 20px;
             position: relative;
         }
-        .icon__search {
+        .manipulation__iconSearch {
             color: rgb(1, 180, 228);
             font-size: 20px;
         }
-        .change__languages {
+        .manipulation__languages {
             border: 1px solid #fff;
             border-radius: 4px;
             width: 28px;
@@ -92,7 +91,7 @@
                 background-color: var(--white);
                 color: var(--font-color);
             }
-            .text {
+            .manipulation__languagesText {
                 display: block;
                 position: absolute;
                 top: 50%;

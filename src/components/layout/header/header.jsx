@@ -19,10 +19,9 @@ function Header() {
                 <ul className={cx('nav__list')}>
                     <li className={cx('nav__item')}>
                         <span className={cx('navItem__title')}>Movies</span>
-                        <div className={cx('item__menu')}>
-                        </div>
+                        {/* <div className={cx('item__menu')}>
+                        </div> */}
                     </li>
-
                     <li className={cx('nav__item')}>
                         <span className={cx('navItem__title')}>TV Shows</span>
                     </li>
@@ -35,16 +34,15 @@ function Header() {
                 </ul>
             </div>
             <div className={cx('manipulation')}>
-                <div className={cx('icon__plus')}>
+                <div className={cx('manipulation__iconPlus')}>
                     <i className={cx('fa-solid fa-plus ')}></i>
                     {/* <ShowMenuPlus /> */}
                 </div>
-                <div className={cx('change__languages')}>
-                    <span className={cx('text')}>VI</span>
+                <div className={cx('manipulation__languages')}>
+                    <span className={cx('manipulation__languagesText')}>VI</span>
                 </div>
-                <div className={cx('login')}>Login</div>
-                <div className={cx('register')}>Register TMDB</div>
-                <div className={cx('icon__search')}>
+               
+                <div className={cx('manipulation__iconSearch')}>
                     <i className={cx('fa-solid fa-magnifying-glass')}></i>
                 </div>
             </div>
