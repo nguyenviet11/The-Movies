@@ -8,7 +8,6 @@ const axiosClient = axios.create({
 })
 
 axiosClient.interceptors.request.use(function (config) {
-
     return config;
 }, function (error) {
     return Promise.reject(error);

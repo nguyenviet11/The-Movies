@@ -1,5 +1,8 @@
+import { api_key } from "../../../constant";
 import axiosClient from "../../../services/axiosClient";
 
-export const getListTrendingDay = () => {
-    return axiosClient.get('/trending/movie/day?api_key=5805c824a6a796dd7b66b4d53e70d510')
+
+export const getListTrending = (time) => {
+    return axiosClient.get(`/trending/all/${time}?api_key=${api_key}`)
 }
+

@@ -1,10 +1,9 @@
 // import moment from 'moment/moment';
-import { customLinkImage } from '../../helper';
 import PieChart from '../Chart/PieChart/PieChart';
+import Images from '../images/Images';
 import './CardStyles.scss'
 
 function CardStyles1({ list, size }) {
-    console.log(list)
     return (
         <>
             {list.map((item) => (
@@ -15,11 +14,8 @@ function CardStyles1({ list, size }) {
                                 <div
                                     className="card-style1__image"
                                 >
-                                    <img
-                                        loading="lazy"
-                                        className="card-style1__poster"
-                                        src={customLinkImage(440, 660, 'face', item.poster_path)}
-                                        alt=""
+                                    <Images pathImage={item.poster_path} 
+                                            titleAlt={item.title || item.name} 
                                     />
                                 </div>
                             </div>
@@ -39,12 +35,11 @@ function CardStyles1({ list, size }) {
                             <div className="card-style1__chart">
                                 <PieChart vote_average={item.vote_average} size="small" />
                             </div>
-
                             <div className="card-style1__name">
-                                {item.title}
+                                {item.title || item.name}
                             </div>
                             <p className="card-style1__time">
-                                {item.release_date}
+                                {item.release_date || item.first_air_date}
                             </p>
                         </div>
                     </div>
