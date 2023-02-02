@@ -47,6 +47,7 @@ html {
     text-rendering: optimizeSpeed; // tối ưu tốc độ hiển thị text
     overflow-y: overlay;
 }
+
 html *::-webkit-scrollbar {
     border-radius: 0;
     width: 8px;

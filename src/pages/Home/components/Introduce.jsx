@@ -1,4 +1,4 @@
-import Button from '../../../components/button/Button';
+import Button from '../../../components/Button/Button';
 import './../Home.scss';
 
 function Introduce() {

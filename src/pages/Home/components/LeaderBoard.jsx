@@ -1,11 +1,11 @@
-import ColumnChart from '../../../components/chart/ColumnChart/ColumnChart';
-import ColumnChartHeader from '../../../components/chart/ColumnChart/ColumnChartHeader';
+import ColumnChart from '../../../components/Chart/ColumnChart/ColumnChart';
+import ColumnChartHeader from '../../../components/Chart/ColumnChart/ColumnChartHeader';
 
 
 function LeaderBoard() {
     return (
         <div className='leader-board'>
-            <ColumnChartHeader />   
+            <ColumnChartHeader />
             <div className='chart__wrap'>
                 <div className='chart'>
                     <ColumnChart />
