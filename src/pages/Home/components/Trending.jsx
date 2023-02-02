@@ -7,7 +7,7 @@ import { getListTrendingDay } from '../services/api';
 function Trending() {
     const [isDataDay, setIsDataDay] = useState([]);
     const [isDataThisWeek, setIsDataThisWeek] = useState([]);
-    const [data, setData] = useState();
+    // const [data, setData] = useState();
     // const [isLoading, setIsLoading] = useState(false);
 
     // const getTrending = async () => {

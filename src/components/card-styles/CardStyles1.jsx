@@ -1,9 +1,10 @@
-
+// import moment from 'moment/moment';
+import { customLinkImage } from '../../helper';
 import PieChart from '../Chart/PieChart/PieChart';
 import './CardStyles.scss'
 
 function CardStyles1({ list, size }) {
-
+    console.log(list)
     return (
         <>
             {list.map((item) => (
@@ -17,7 +18,7 @@ function CardStyles1({ list, size }) {
                                     <img
                                         loading="lazy"
                                         className="card-style1__poster"
-                                        src=""
+                                        src={customLinkImage(440, 660, 'face', item.poster_path)}
                                         alt=""
                                     />
                                 </div>
@@ -40,11 +41,11 @@ function CardStyles1({ list, size }) {
                             </div>
 
                             <div className="card-style1__name">
-                                {/* <Link title={item.title}>
-                                    {item.title}
-                                </Link> */}
+                                {item.title}
                             </div>
-                            <p className="card-style1__time"></p>
+                            <p className="card-style1__time">
+                                {item.release_date}
+                            </p>
                         </div>
                     </div>
                 </div>
