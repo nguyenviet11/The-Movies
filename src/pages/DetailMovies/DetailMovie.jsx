@@ -1,6 +1,6 @@
 import React from 'react'
 import Content from '../../components/content/Content'
-import Header from '../../components/header/header'
+import Header from '../../components/header/Header'
 import Layout from '../../components/layout/Layout'
 
 
@@ -10,7 +10,6 @@ const DetailMovies = () => {
             <Layout>
                 <Header />
                 <Content />
-
             </Layout>
         </>
     )
