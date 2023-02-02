@@ -16,7 +16,7 @@
     position: relative;
 }
 
-@mixin progressbar_inside--df {
+@mixin progressbar__inside--df {
     position: absolute;
     border-radius: 50%;
     top: 50%;
@@ -32,43 +32,43 @@ $height-App-main-big: 68px;
 $width-App-main-small: 38px;
 $height-App-main-small: 38px;
 
-.big {
+.big-pie-chart {
     @include app--main();
     width: $width-App-main-big;
     height: $height-App-main-big;
 
-    .progressbar {
+    .pie-chart__progressbar {
         @include progressbar--df();
         width: calc($width-App-main-big - 6px);
         height: calc($height-App-main-big - 6px);
     }
 
-    .progressbar_inside {
-        @include progressbar_inside--df();
+    .progressbar__inside {
+        @include progressbar__inside--df();
         width: calc($width-App-main-big - 14px);
         height: calc($height-App-main-big - 14px);
     }
 }
 
-.small {
+.small-pie-chart {
     @include app--main();
     width: $width-App-main-small;
     height: $height-App-main-small;
 
-    .progressbar {
+    .pie-chart__progressbar {
         @include progressbar--df();
         width: calc($width-App-main-small - 2px);
         height: calc($height-App-main-small - 2px);
     }
 
-    .progressbar_inside {
-        @include progressbar_inside--df();
+    .progressbar__inside {
+        @include progressbar__inside--df();
         width: calc($width-App-main-small - 10px);
         height: calc($height-App-main-small - 10px);
     }
 }
 
-.user_comp {
+.pie-chart {
     width: 100%;
     height: 100%;
     /* padding: 10px 7px 10px 2px; */
@@ -80,7 +80,7 @@ $height-App-main-small: 38px;
     text-align: center;
 }
 
-.action_class {
+.pie-chart__action {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -89,7 +89,7 @@ $height-App-main-small: 38px;
     /* margin-left: 10px; */
 }
 
-.user_comp_step {
+.pie-chart__step {
     width: 100%;
     height: auto;
     display: flex;
