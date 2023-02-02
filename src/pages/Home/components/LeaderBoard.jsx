@@ -1,5 +1,5 @@
-import ColumnChart from '../../../components/Chart/ColumnChart/ColumnChart';
-import ColumnChartHeader from '../../../components/Chart/ColumnChart/ColumnChartHeader';
+import ColumnChart from '../../../components/chart/ColumnChart/ColumnChart';
+import ColumnChartHeader from '../../../components/chart/ColumnChart/ColumnChartHeader';
 
 
 function LeaderBoard() {

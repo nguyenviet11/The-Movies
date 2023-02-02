@@ -1,5 +1,5 @@
 // import moment from 'moment/moment';
-import PieChart from '../Chart/PieChart/PieChart';
+import PieChart from '../chart/PieChart/PieChart';
 import Images from '../images/Images';
 import './CardStyles.scss'
 

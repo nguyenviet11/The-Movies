@@ -7,7 +7,7 @@ function LatestTrailers() {
         <div className='trailer'>
         <div className='trailer__wrap'>
             <TabUI
-                header="Trailer"
+                header="Latest Trailers"
                 border="hasBorder"
                 themeTab="activeTabLight"
                 list={[
