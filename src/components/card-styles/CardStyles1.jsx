@@ -1,59 +1,50 @@
-import classNames from 'classnames/bind';
-// import moment from 'moment/moment';
-import styles from './CardStyles.module.scss';
-import { Link } from 'react-router-dom';
+
 import PieChart from '../Chart/PieChart/PieChart';
+import './CardStyles.scss'
 
-const cx = classNames.bind(styles);
-
-function CardStyles1({ list, small = false, medium = false }) {
-    const classes = cx('cdstl1', {
-        small,
-        medium,
-    });
+function CardStyles1({ list, size }) {
 
     return (
         <>
             {list.map((item) => (
-                <div className={classes} key={item.id}>
-                    <div className={cx(`cdstl1`)}>
-                        <div className={cx('cdstl1__image')}>
-                            <div className={cx('cdstl1__wrapper')}>
+                <div className={size} key={item.id}>
+                    <div className="card-style1">
+                        <div className="card-style1__image">
+                            <div className="card-style1__wrapper">
                                 <div
-                                    className={cx('cdstl1__image')}
-
+                                    className="card-style1__image"
                                 >
                                     <img
                                         loading="lazy"
-                                        className={cx('cdstl1__poster')}
+                                        className="card-style1__poster"
                                         src=""
                                         alt=""
                                     />
                                 </div>
                             </div>
                             <div
-                                className={cx('cdstl1__options')}
+                                className="card-style1__options"
                                 data-id="843794"
                                 data-object-id="60d1bd7ebf31f2007eddf9a9"
                                 data-media-type="movie"
                                 data-role="tooltip"
                             >
-                                <div className={cx('cdstl1__click')} href="#">
-                                    <div className={cx('cdstl1__glyphicons')}></div>
+                                <div className="card-style1__click" href="#">
+                                    <div className="card-style1__glyphicons"></div>
                                 </div>
                             </div>
                         </div>
-                        <div className={cx('cdstl1__content')}>
-                            <div className={cx('cdstl1__piechart')}>
-                                <PieChart vote_average={item.vote_average} small />
+                        <div className="card-style1__content">
+                            <div className="card-style1__chart">
+                                <PieChart vote_average={item.vote_average} size="small" />
                             </div>
 
-                            <div className={cx('cdstl1__name')}>
+                            <div className="card-style1__name">
                                 {/* <Link title={item.title}>
                                     {item.title}
                                 </Link> */}
                             </div>
-                            <p className={cx('cdstl1__time')}></p>
+                            <p className="card-style1__time"></p>
                         </div>
                     </div>
                 </div>

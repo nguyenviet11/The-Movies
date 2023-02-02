@@ -1,28 +1,25 @@
-import classNames from 'classnames/bind';
-import styles from './PieChart.module.scss';
-import React from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import './PieChart.scss'
 
-const cx = classNames.bind(styles);
-
-function PieChart({ vote_average, big = false, small = false, medium = false }) {
-    const classes = cx('wrapper', {
-        big,
-        small,
-        medium,
-    });
+function PieChart({ vote_average, size}) {
+    let classes;
+    if (size === 'small') {
+        classes = 'small-pie-chart'
+    } else if (size === 'big') {
+        classes = 'big-pie-chart'
+    } else return;
 
     return (
-        <div className={classes}>
-            <div className={cx('user_comp')}>
-                <div className={cx('action_class')}>
-                    <div className={cx('user_comp_step')}>
+        <div className={classes} >
+            <div className="pie-chart">
+                <div className="pie-chart__action">
+                    <div className="pie-chart__step">
                         {vote_average === undefined || null ? (
                             ''
                         ) : (
-                            <div className={cx('progressbar')}>
+                            <div className="pie-chart__progressbar">
                                 <CircularProgressbar
-                                    className={cx('progressbar__circular')}
+                                    className="progressbar__circular"
                                     value={vote_average * 10}
                                     styles={
                                         vote_average < 7
@@ -30,9 +27,9 @@ function PieChart({ vote_average, big = false, small = false, medium = false }) 
                                             : buildStyles({ pathColor: 'rgb(33,208,122)' })
                                     }
                                 />
-                                <div className={cx('progressbar_inside')}>
-                                    <span className={cx('value__percent')}>{Math.floor(vote_average * 10)}</span>
-                                    <span className={cx('percent')} style={{ fontSize: 'xx-small', color: 'white' }}>
+                                <div className="progressbar__inside">
+                                    <span className="value__percent">{Math.floor(vote_average * 10)}</span>
+                                    <span className="percent" style={{ fontSize: 'xx-small', color: 'white' }}>
                                         %
                                     </span>
                                 </div>

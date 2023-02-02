@@ -1,17 +1,15 @@
-import classNames from 'classnames/bind';
-import styles from './ColumnChart.module.scss';
-const cx = classNames.bind(styles);
+import './ColumnChart.scss'
 
 function ColumnChartHeader() {
     return (
-        <div className={cx('column_header')}>
-            <h2 className={cx('header')}>Leaderboard</h2>
+        <div className='column__header'>
+            <h2 className='column__header-text'>Leader board</h2>
             <div>
                 <div>
-                    <span className={cx('dot__all')}></span> All Time Edits
+                    <span className='column__dot-all'></span> All Time Edits
                 </div>
-                <div className={cx('mt4')}>
-                    <span className={cx('this_week')}></span> Edits This Week
+                <div className='column__mt4'>
+                    <span className='column__this-week'></span> Edits This Week
                 </div>
             </div>
         </div>

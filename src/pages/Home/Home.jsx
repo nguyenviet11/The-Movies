@@ -10,7 +10,6 @@ import PopularHome from './components/Popular';
 import LeaderBoard from './components/LeaderBoard';
 
 
-
 function Home() {
     return (
         <Layout>

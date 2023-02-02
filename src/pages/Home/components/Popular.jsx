@@ -38,7 +38,7 @@ function PopularHome() {
                         title: <div className='title__default'>On TV</div>,
                         content: (
                             <div className='trending__content'>
-                                {isDataDay.length === 0 ? '' : <CardStyles1 size="small" list={isDataDay} small />}
+                                {isDataDay.length === 0 ? '' : <CardStyles1 size="small" list={isDataDay} />}
                                 <div className='shadow'></div>
                             </div>
                         ),
@@ -50,7 +50,7 @@ function PopularHome() {
                                 {isDataThisWeek.length === 0 ? (
                                     ''
                                 ) : (
-                                    <CardStyles1 size="small" list={isDataThisWeek} small />
+                                    <CardStyles1 size="small" list={isDataThisWeek}  />
                                 )}
                                 <div className='shadow'></div>
                             </div>

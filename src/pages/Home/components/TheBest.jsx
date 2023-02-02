@@ -16,11 +16,11 @@ function TheBestMovie() {
 
                         <div >
                             <p className='the-best__description'>The best (and worst) from 2022.</p>
-                            <h4 className='the-best__button'>
+                            <div className='the-best__button'>
                                 <Button rounded borderWhite large>
                                     Check it out
                                 </Button>
-                            </h4>
+                            </div>
                         </div>
                     </div>
                 </div>
