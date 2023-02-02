@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
+    baseURL: 'https://api.themoviedb.org/3',
     headers: {
         'Content-Type': 'application/json'
     }

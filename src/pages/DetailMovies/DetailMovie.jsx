@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from '../../components/content/Content'
 import Layout from '../../components/layout/Layout'
 
 
@@ -7,7 +6,10 @@ const DetailMovies = () => {
     return (
         <>
             <Layout>
-                <Content />
+                <div>
+                    <header></header>
+                    <div className='detail-content-movie__link--active'></div>
+                </div>
             </Layout>
         </>
     )
