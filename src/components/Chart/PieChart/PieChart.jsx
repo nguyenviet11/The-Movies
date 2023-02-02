@@ -1,9 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './PieChart.module.scss';
 import React from 'react';
-// import 'react-circular-progressbar/dist/styles.css';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
-// import 'react-sweet-progress/lib/style.css';
 
 const cx = classNames.bind(styles);
 
