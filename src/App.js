@@ -4,7 +4,6 @@ import Home from './pages/Home/Home';
 import Person from './pages/Person/Person';
 import Search from './pages/Search/Search';
 
-
 function App() {
   return (
     <BrowserRouter>
