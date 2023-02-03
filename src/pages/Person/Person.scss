@@ -1,0 +1,194 @@
+.person__wrapper {
+    margin-top: 64px;
+    display: flex;
+    flex: wrap;
+    .person__side-bar {
+        flex: 30%;
+        padding: 40px;
+    }
+    .person__button {
+        margin-top: 40px;
+    }
+    .person__side-content {
+        flex: 70%;
+        margin-right: 40px;
+    }
+}
+
+.poster-person {
+    display: flex;
+    flex-wrap: nowrap;
+    &__profile {
+        display: block;
+        min-width: 300px;
+        width: 300px;
+        height: 450px;
+        position: relative;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        border-radius: var(--imageBorderRadius);
+    }
+    &__content {
+        border-radius: var(--imageBorderRadius);
+        overflow: hidden;
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        min-width: 100%;
+        border-radius: 8px;
+        height: 100%;
+        min-height: 100%;
+        border-width: 0px;
+        outline: none;
+        
+    }
+}
+
+.social-person {
+    height: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    .social-person__link {
+        display: block;
+        font-size: 1.9em;
+        color: rgba(var(--tmdbLightBlue), 1);
+    }
+    .social-person__icon {
+        padding-top: 32px;
+    }
+}
+
+.info-person {
+    &__header {
+        font-size: 1.1em;
+        font-weight: 700;
+        padding: 20px 0;
+    }
+    &__card {
+        &-content {
+            padding-top: 4px;
+            font-size: 0.9em;
+        }
+    }
+}
+
+.header__title--small {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.description-person {
+    padding: 20px 0 0 0;
+    &__title {
+        font-weight: 700;
+        color: #000;
+        font-size: 1.4em;
+    }
+    &__read {
+        width: 100%;
+        z-index: 2;
+        height: 22px;
+        color: rgba(var(--tmdbLightBlue), 1);
+        display: flex;
+        justify-content: end;
+    }
+    &__icon {
+        padding-left: 6px;
+    }
+   
+}
+
+
+.list-film-person {
+    width: 100%;
+    .list-film-person__content {
+        width: calc(896px - 40px);
+        display: flex;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: rgb(219, 219, 219);
+        }
+    }
+}
+
+.career-description {
+    padding: 40px 0;
+    &__filter {
+        display: flex;
+        justify-content: end;
+        &-list {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 4px;
+        }
+        &-item {
+            padding: 0 10px;
+        }
+        &-icon {
+            padding-left: 6px;
+        }
+    }
+    &__header {
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 1.3em;
+        margin: 0 0 4px 0;
+    }
+    &__card {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid rgba(var(--lightGrey), 1);
+        background-color: #fff;
+    }
+    &__credit {
+        width: 100%;
+        margin: 0;
+        border-collapse: separate;
+        border-bottom: 1px solid #dedede;
+        padding: 10px 0 10px 0;
+    }
+    &__tbody {
+        background-color: #fff;
+        border: 1px solid rgba(var(--lightGrey), 1);
+        border-bottom: none;
+    }
+    &__year {
+        width: 64px;
+        font-weight: 400;
+        vertical-align: top;
+        text-align: center;
+    }
+    &__separator {
+        width: 64px;
+        font-weight: 400;
+        vertical-align: top;
+        text-align: center;
+    }
+    &__tooltip {
+        color: #000;
+        font-weight: 600;
+    }
+    &__group {
+        color: rgba(0,0,0,0.5);
+        font-weight: 400;
+    }
+    &__role {
+        color: rgba(0,0,0,0.8);
+        font-weight: 500;
+    }
+}

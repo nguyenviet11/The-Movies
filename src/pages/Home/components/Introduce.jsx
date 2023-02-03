@@ -1,9 +1,39 @@
+import { useEffect, useState } from 'react';
 import Button from '../../../components/button/Button';
+import { secure_base_url_images } from '../../../constant';
 import './../Home.scss';
 
-function Introduce() {
+function Introduce( {listPopularMovies} ) {
+    const [isBackgroundImage, setIsBackgroundImage] = useState(null)
+    const listPathImage = [];
+    let pathBackGround;
+
+    const handleImageBackground = (pathImage) => {
+        return `${secure_base_url_images}w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/${pathImage}`;
+    }
+   
+    listPopularMovies.forEach(element => {
+        listPathImage.push(element.backdrop_path);
+    });
+
+    const getRandomArbitrary = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    useEffect(() => {
+          const max = listPathImage.length - 1;
+          getRandomArbitrary(0, max)
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+          pathBackGround = listPathImage[getRandomArbitrary(0, max)]
+          setIsBackgroundImage(`linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
+          url('${handleImageBackground(pathBackGround)}')`)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+
     return (
-        <section className='introduce' >
+        <section className='introduce'
+            style={ isBackgroundImage === null ? {} : { backgroundImage: isBackgroundImage}} >
             <div className='introduce__media'>
                 <div className='introduce__wrapper'>
                     <div className='introduce__content'>

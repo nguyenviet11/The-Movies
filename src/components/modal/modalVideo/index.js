@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import VideoModal from './VideoModal';
+import React from 'react';
+import ModalVideo from 'react-modal-video';
+import './ModalVideo.scss';
 
-function ModalPlayVideo() {
-    const [isOpen, setOpen] = useState(false);
+// const cx = classNames.bind(styles);
 
-    function handleChange() {
-        setOpen(!isOpen);
-    }
-
+function VideoModal({ isOpen, close, keyVideo }) {
+    console.log(keyVideo);
     return (
-        <div className="wrapper">
-            <VideoModal isOpen={isOpen} close={handleChange} />
-            <button onClick={handleChange}>Play</button>
+        <div>
+            <div className="wrapper">
+                {keyVideo === '' ? (
+                    ''
+                ) : (
+                    <ModalVideo chanel="youtube" isOpen={isOpen} videoId={keyVideo} onClose={close} />
+                )}
+            </div>
         </div>
     );
 }
 
-export default ModalPlayVideo;
+export default VideoModal;

@@ -1,4 +1,5 @@
 // import moment from 'moment/moment';
+import { listWidthImages } from '../../constant';
 import PieChart from '../chart/PieChart/PieChart';
 import Images from '../images/Images';
 import './CardStyles.scss'
@@ -15,7 +16,9 @@ function CardStyles1({ list, size }) {
                                     className="card-style1__image"
                                 >
                                     <Images pathImage={item.poster_path} 
+                                            width={listWidthImages.w500}
                                             titleAlt={item.title || item.name} 
+                                            stylesImage='poster'
                                     />
                                 </div>
                             </div>
