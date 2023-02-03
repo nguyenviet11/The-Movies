@@ -1,13 +1,13 @@
 import ListFilm from './ListFilm';
 
-function PopularHome({ listDataTrendingDay, listDataTrendingWeek }) {
+function PopularHome({ listPopularTV, listPopularMovies }) {
     return (
        <ListFilm 
-            header='Popular Movies' 
+            header="What's Popular" 
             border='hasBorder' 
             themeTab='activeTabDark' 
-            listTitle = {{day: 'Today', week: 'This Week'}} 
-            listTrending = {{day: listDataTrendingDay, week: listDataTrendingWeek}}
+            listTitle = {{day: 'On TV', week: 'In Theaters'}} 
+            listTrending = {{day: listPopularTV, week: listPopularMovies}}
        />
     );
 }

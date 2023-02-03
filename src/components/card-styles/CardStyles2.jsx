@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import VideoModal from '../Modal/modalVideo/VideoModal';
+import VideoModal from '../modal/modalVideo/index';
 import './CardStyles.scss'
 
 function CardStyles2() {
@@ -55,7 +55,7 @@ function CardStyles2() {
                     <p className="card-style2__description">The Weeks Ahead Trailer</p>
                 </div>
             </div>
-            {/* <VideoModal isOpen={isOpen} close={handleShowVideo} /> */}
+            <VideoModal isOpen={isOpen} close={handleShowVideo} key="" />
         </div>
     );
 }
