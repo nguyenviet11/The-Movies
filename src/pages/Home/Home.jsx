@@ -9,27 +9,40 @@ import LatestTrailers from './components/LatestTrailers';
 import TheBestMovie from './components/TheBest';
 import PopularHome from './components/Popular';
 import LeaderBoard from './components/LeaderBoard';
-import { getListTrending } from './services/api';
+import { getListPopular, getListTrending } from './services/api';
 import { useEffect, useState } from 'react';
 
 
 function Home() {
+    // GET LIST TRENDING
     const [listDataTrendingDay, setListDataTrendingDay] = useState(null);
     const [listDataTrendingWeek, setListDataTrendingWeek] = useState(null);
-
     const [trendingError, setTrendingError] = useState(null);
+
+    // GET LIST POPULAR
+    const [listPopularTV, setListPopularTV] = useState(null);
+    const [listPopularMovies, setListPopularMovies] = useState(null);
+    const [popularError, setPopularError] = useState(null);
+
     const [isLoading, setIsLoading] = useState(false);
 
     const getTrending = async () => {
         try {
             setIsLoading(true)
+            // GET LIST TRENDING
             const responseListTrendingDay = await getListTrending('day');
             const responseListTrendingWeek = await getListTrending('week');
             setListDataTrendingDay(responseListTrendingDay.data.results)
             setListDataTrendingWeek(responseListTrendingWeek.data.results)
+            // GET LIST POPULAR
+            const responseListPopularTv = await getListPopular('tv', 1);
+            const responseListPopularMovies = await getListPopular('movie', 1);
+            setListPopularTV(responseListPopularTv.data.results);
+            setListPopularMovies(responseListPopularMovies.data.results);
         } 
         catch (err) {
             setTrendingError(err)
+            setPopularError(err)
         } 
     }
 
@@ -60,11 +73,11 @@ function Home() {
                     <LatestTrailers />
                     {/* POPULAR HOME */}
                     {
-                        listDataTrendingDay === null && listDataTrendingWeek === null 
+                        listPopularTV === null && listPopularMovies === null 
                         ? ''
                         : 
-                        <PopularHome   listDataTrendingDay = {listDataTrendingDay}
-                                    listDataTrendingWeek = {listDataTrendingWeek}
+                        <PopularHome    listPopularTV = {listPopularTV}
+                                        listPopularMovies = {listPopularMovies}
                         />
                     }
                     {/* LEADER BOARD */}

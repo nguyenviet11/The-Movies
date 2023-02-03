@@ -9,6 +9,15 @@ function PieChart({ vote_average, size}) {
         classes = 'big-pie-chart'
     } else return;
 
+    const isColorCircular = (percent) => {
+        let isColor;
+        if (percent >= 0 && percent <= 4) isColor =  'rgb(219,35,96)'
+        else if (percent >= 4 && percent <= 7) isColor = 'rgb(210,213,49)'
+        else isColor = 'rgb(33,208,122)'
+        return isColor;
+    }
+   
+
     return (
         <div className={classes} >
             <div className="pie-chart">
@@ -22,9 +31,7 @@ function PieChart({ vote_average, size}) {
                                     className="progressbar__circular"
                                     value={vote_average * 10}
                                     styles={
-                                        vote_average < 7
-                                            ? buildStyles({ pathColor: 'rgb(210,213,49)' })
-                                            : buildStyles({ pathColor: 'rgb(33,208,122)' })
+                                        buildStyles({ pathColor: isColorCircular(vote_average) })
                                     }
                                 />
                                 <div className="progressbar__inside">
