@@ -2,9 +2,9 @@ import '../Person.scss';
 
 function SocialPerson() {
     return ( 
-        <div class="social-person">
+        <div className="social-person">
             <div>
-                <a  class="social-person__link" 
+                <a  className="social-person__link" 
                     title="Visit Instagram" 
                     href="https://instagram.com/letitiawright/" 
                     target="_blank" 

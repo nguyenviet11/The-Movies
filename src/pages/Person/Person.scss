@@ -1,17 +1,22 @@
 .person__wrapper {
     margin-top: 64px;
     display: flex;
+    justify-content: center;
     flex: wrap;
     .person__side-bar {
-        flex: 30%;
-        padding: 40px;
+        margin-top: 40px;
+        min-width: 300px;
+        width: 300px;
+        margin-right: 40px;
     }
     .person__button {
         margin-top: 40px;
     }
     .person__side-content {
-        flex: 70%;
+        margin-top: 32px;
         margin-right: 40px;
+        max-width: 920px;
+        width: calc(100vw - 80px - 300px);
     }
 }
 
@@ -83,7 +88,6 @@
 }
 
 .description-person {
-    padding: 20px 0 0 0;
     &__title {
         font-weight: 700;
         color: #000;
@@ -107,7 +111,7 @@
 .list-film-person {
     width: 100%;
     .list-film-person__content {
-        width: calc(896px - 40px);
+       
         display: flex;
         overflow-x: scroll;
         &::-webkit-scrollbar {
