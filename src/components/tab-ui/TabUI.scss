@@ -36,7 +36,10 @@
     border-radius: 30px;
     pointer-events: none;
     position: relative;
-    transition: all 0.5s ease-in-out;
+    &::after {
+        transition: height .5s linear;
+        opacity: 1;
+    }
 }
 
 @mixin tabItemDefault {

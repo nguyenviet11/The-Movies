@@ -1,5 +1,68 @@
 import './ColumnChart.scss'
 
+const fakeDataLeaderBoard = [
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+    {
+        avt: '',
+        name: 'RuiZafon',
+        day: 273293,
+        week: 18811
+    },
+]
+
 function ColumnChart() {
     return (
         <div className='column'>
@@ -19,11 +82,11 @@ function ColumnChart() {
                                         <a href="/u/marsters">marsters</a>
                                     </h3>
                                     <div className='column__meter'>
-                                        <div className='column__gauge'></div>
+                                        <div className='column__gauge' style={{width: '12%'}}></div>
                                         <h4 className='column__number'>91975</h4>
                                     </div>
                                     <div className='column__meter-week'>
-                                        <div className='column__gauge1'></div>
+                                        <div className='column__gauge1' style={{width: '80%'}}></div>
                                         <h4 className='column__number'>47712</h4>
                                     </div>
                                 </div>
