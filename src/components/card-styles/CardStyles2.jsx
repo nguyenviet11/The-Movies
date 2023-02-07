@@ -1,24 +1,45 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { listWidthImages } from '../../constant';
 import Images from '../images/Images';
 import VideoModal from '../modal/modalVideo/index';
 import './CardStyles.scss'
+import { getDetailTV } from './services/api';
 
 function CardStyles2({ listData }) {
-    console.log(listData);
-
     const [isOpen, setOpen] = useState(false);
+    const [detailMovies, setDetailMovies] = useState();
+    const [idMovie, setIdMovie] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+    const [detailMovieError, setDetailMovieError] = useState(null);
 
-    const handleShowVideo = () => {
+    const handleShowVideo = (id) => {
         setOpen(!isOpen);
+        setIdMovie(id);
     };
+
+    const listDetailTV = async (id) => {
+        try {
+            setIsLoading(true);
+            const responseDetailMovies = await getDetailTV(id);
+            setDetailMovies(responseDetailMovies.data.results)
+        } catch (err) {
+            setDetailMovieError(err)
+        }
+    }
+
+    useEffect(() => {
+        listDetailTV(idMovie);
+    }, [idMovie])
+
+
+
 
     return (
         <div className='card-wrap'>
             {listData.map((value) => (
                 <div className="card-style2" key={value.id}>
                     <div className="card-style2__image">
-                        <div className="card-style2__wrapper" onClick={handleShowVideo}>
+                        <div className="card-style2__wrapper" onClick={() => handleShowVideo(value.id)}>
                             <div
                                 className="card-style2__trailer"
                                 data-id={value.id}
@@ -32,7 +53,6 @@ function CardStyles2({ listData }) {
                                 />
 
                                 <div className="card-style2__play">
-                                    {/* NÚT CLICK */}
                                     <span className="card-style2__glyphicons"></span>
                                 </div>
                             </div>
@@ -58,8 +78,15 @@ function CardStyles2({ listData }) {
                     </div>
                 </div>
             ))}
-
-            <VideoModal isOpen={isOpen} close={handleShowVideo} key="" />
+            {
+                (detailMovies) && (
+                    <VideoModal
+                        isOpen={isOpen}
+                        close={handleShowVideo}
+                        keyVideo={detailMovies[0].key}
+                    />
+                )
+            }
         </div>
     );
 }
