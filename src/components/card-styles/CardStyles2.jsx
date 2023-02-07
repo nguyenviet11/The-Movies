@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { listWidthImages } from '../../constant';
+import Images from '../images/Images';
 import VideoModal from '../modal/modalVideo/index';
 import './CardStyles.scss'
 
-function CardStyles2() {
+function CardStyles2({ listData }) {
+    console.log(listData);
+
     const [isOpen, setOpen] = useState(false);
 
     const handleShowVideo = () => {
@@ -10,51 +14,51 @@ function CardStyles2() {
     };
 
     return (
-        <div>
-            <div className="card-style2">
-                <div className="card-style2__image">
-                    <div className="card-style2__wrapper" onClick={handleShowVideo}>
-                        <div
-                            className="card-style2__trailer"
-                            data-id="E5tSO9aR2Ds"
-                            data-title="The Weeks Ahead Trailer"
-                            title="Những Người Còn Sót Lại"
-                        >
-                            <img
-                                loading="lazy"
-                                className="card-style2__backdrop"
-                                src="https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/uDgy6hyPd82kOHh6I95FLtLnj6p.jpg"
-                                alt=""
-                            />
+        <div className='card-wrap'>
+            {listData.map((value) => (
+                <div className="card-style2" key={value.id}>
+                    <div className="card-style2__image">
+                        <div className="card-style2__wrapper" onClick={handleShowVideo}>
+                            <div
+                                className="card-style2__trailer"
+                                data-id={value.id}
+                                data-title={value.name || value.title}
+                                title={value.name || value.title}
+                            >
+                                <Images pathImage={value.poster_path}
+                                    width={listWidthImages.w500}
+                                    titleAlt={value.title || value.name}
+                                    stylesImage='poster'
+                                />
 
-                            <div className="card-style2__play">
-                                {/* NÚT CLICK */}
-                                <span className="card-style2__glyphicons"></span>
+                                <div className="card-style2__play">
+                                    {/* NÚT CLICK */}
+                                    <span className="card-style2__glyphicons"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            className="card-style2__options"
+                            data-id={value.id}
+                            data-role="tooltip"
+                        >
+                            <div className="card-style2__click" href="#">
+                                <div className="card-style2__glyphiconsv3"></div>
                             </div>
                         </div>
                     </div>
-
-                    <div
-                        className="card-style2__options"
-                        data-id="100088"
-                        data-object-id="5e614cd3357c00001631a6f4"
-                        data-media-type="tv"
-                        data-role="tooltip"
-                    >
-                        <div className="card-style2__click" href="#">
-                            <div className="card-style2__glyphiconsv3"></div>
+                    <div className="card-style2__content">
+                        <div className="card-style2__name">
+                            <a href="/movie/843794">
+                                {value.title || value.name}
+                            </a>
                         </div>
+                        <p className="card-style2__description">{value.first_air_date}</p>
                     </div>
                 </div>
-                <div className="card-style2__content">
-                    <div className="card-style2__name">
-                        <a href="/movie/843794" title="JUNG_E">
-                            Những Người Còn Sót Lại
-                        </a>
-                    </div>
-                    <p className="card-style2__description">The Weeks Ahead Trailer</p>
-                </div>
-            </div>
+            ))}
+
             <VideoModal isOpen={isOpen} close={handleShowVideo} key="" />
         </div>
     );

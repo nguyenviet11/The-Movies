@@ -1,9 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Button from '../../../components/button/Button';
 import { secure_base_url_images } from '../../../constant';
 import './../Home.scss';
 
-function Introduce( {listPopularMovies} ) {
+import { HomeContext } from '../Home';
+
+
+function Introduce() {
+    // Tại provides value là thì thì ở đây là cái đó 
+    let listPopularMovies = useContext(HomeContext)
+    listPopularMovies = listPopularMovies.popularMovies;
+    // ------------------------------------------------------------
     const [isBackgroundImage, setIsBackgroundImage] = useState(null)
     const listPathImage = [];
     let pathBackGround;
@@ -11,7 +18,7 @@ function Introduce( {listPopularMovies} ) {
     const handleImageBackground = (pathImage) => {
         return `${secure_base_url_images}w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/${pathImage}`;
     }
-   
+
     listPopularMovies.forEach(element => {
         listPathImage.push(element.backdrop_path);
     });
@@ -21,19 +28,19 @@ function Introduce( {listPopularMovies} ) {
     }
 
     useEffect(() => {
-          const max = listPathImage.length - 1;
-          getRandomArbitrary(0, max)
-          // eslint-disable-next-line react-hooks/exhaustive-deps
-          pathBackGround = listPathImage[getRandomArbitrary(0, max)]
-          setIsBackgroundImage(`linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
-          url('${handleImageBackground(pathBackGround)}')`)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        const max = listPathImage.length - 1;
+        getRandomArbitrary(0, max)
+        pathBackGround = listPathImage[getRandomArbitrary(0, max)]
+        setIsBackgroundImage(
+            `linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
+            url('${handleImageBackground(pathBackGround)}')`
+        )
     }, [])
 
 
     return (
         <section className='introduce'
-            style={ isBackgroundImage === null ? {} : { backgroundImage: isBackgroundImage}} >
+            style={isBackgroundImage === null ? {} : { backgroundImage: isBackgroundImage }} >
             <div className='introduce__media'>
                 <div className='introduce__wrapper'>
                     <div className='introduce__content'>

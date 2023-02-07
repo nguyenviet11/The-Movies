@@ -5,7 +5,6 @@ import './ModalVideo.scss';
 // const cx = classNames.bind(styles);
 
 function VideoModal({ isOpen, close, keyVideo }) {
-    console.log(keyVideo);
     return (
         <div>
             <div className="wrapper">
