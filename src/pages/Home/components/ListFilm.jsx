@@ -3,6 +3,7 @@ import './../Home.scss'
 import CardStyles1 from '../../../components/card-styles/CardStyles1';
 import TabUI from '../../../components/tab-ui/_index';
 
+
 const ListFilm = ({  header, border, themeTab, listTitle, listTrending }) => {
     
     return (

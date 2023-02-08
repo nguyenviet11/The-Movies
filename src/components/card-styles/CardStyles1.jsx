@@ -3,6 +3,8 @@ import { listWidthImages } from '../../constant';
 import PieChart from '../chart/PieChart/PieChart';
 import Images from '../images/Images';
 import './CardStyles.scss'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function CardStyles1({ list, size }) {
     return (
@@ -15,11 +17,11 @@ function CardStyles1({ list, size }) {
                                 <div
                                     className="card-style1__image"
                                 >
-                                    <Images pathImage={item.poster_path} 
+                                   { <Images pathImage={item.poster_path} 
                                             width={listWidthImages.w500}
                                             titleAlt={item.title || item.name} 
                                             stylesImage='poster'
-                                    />
+                                    /> || <Skeleton />}
                                 </div>
                             </div>
                             <div

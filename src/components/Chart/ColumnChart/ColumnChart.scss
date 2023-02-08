@@ -1,5 +1,5 @@
 .column {
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -19,10 +19,7 @@
     .column__wrap {
         width: 100%;
     }
-
-    .column__content {
-        padding-top: 20px;
-    }
+   
     .column__leader {
         width: 100%;
         margin: 0;
@@ -55,7 +52,7 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background-color: rgba(var(--accountTeal), 1);
+            // background-color: rgba(var(--accountTeal), 1);
             top: 0;
             left: 0;
             line-height: 48px;
@@ -74,6 +71,7 @@
         flex-wrap: wrap;
         .column__name {
             margin: 2px;
+            font-size: 1em;
         }
     }
     .column__meter {

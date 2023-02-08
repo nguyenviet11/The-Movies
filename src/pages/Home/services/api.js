@@ -1,3 +1,4 @@
+import axios from "axios";
 import { api_key } from "../../../constant";
 import axiosClient from "../../../services/axiosClient";
 
@@ -13,4 +14,8 @@ export const getListPopular = (params, page) => {
 
 export const getLatestTrailer = (params, page) => {
     return axiosClient.get(`/${params}/top_rated?api_key=${api_key}&language=en-US&page=${page}`)
+}
+
+export const getLeaderBoard = (params) => {
+    return axios.get(`https://63e069a58b24964ae0fd9cdd.mockapi.io/${params}`)
 }

@@ -47,7 +47,7 @@ function CardStyles2({ listData }) {
                                 title={value.name || value.title}
                             >
                                 <Images pathImage={value.poster_path}
-                                    width={listWidthImages.w500}
+                                    width={listWidthImages.w1280}
                                     titleAlt={value.title || value.name}
                                     stylesImage='poster'
                                 />

@@ -12,6 +12,8 @@ import LeaderBoard from './components/LeaderBoard';
 import { getListPopular, getListTrending, getLatestTrailer } from './services/api';
 import { createContext, useEffect, useState } from 'react';
 import { listKeyWords } from '../../constant';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 // 1. create context:
 export const HomeContext = createContext()
@@ -35,7 +37,7 @@ function Home() {
     const [laTestTrailerError, setLaTestTrailerError] = useState(null);
 
     // GET LIST LATEST 
-    
+
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -92,12 +94,13 @@ function Home() {
 
     return (
         <>
+
             {
-                (   listDataTrendingDay && 
-                    listDataTrendingWeek && 
-                    listPopularTV && 
+                (listDataTrendingDay &&
+                    listDataTrendingWeek &&
+                    listPopularTV &&
                     listPopularMovies &&
-                    listLaTestTrailerTV && 
+                    listLaTestTrailerTV &&
                     listLaTestTrailerMovies
                 )
                 && (
@@ -111,9 +114,11 @@ function Home() {
                                 laTestTrailerTv: listLaTestTrailerTV,
                                 laTestTrailerMovies: listLaTestTrailerMovies
                             }
-                        }>  
+                        }>
+
                         <Layout>
                             <div className='home-page'>
+
                                 <header>
                                     <Introduce />
                                     <TheBestMovie />
@@ -126,6 +131,8 @@ function Home() {
                                 </div>
                             </div>
                         </Layout>
+
+
                     </HomeContext.Provider>
                 )
             }

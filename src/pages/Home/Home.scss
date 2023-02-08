@@ -202,7 +202,10 @@
         flex-wrap: wrap;
 
         .chart {
-            width: 50%;
+            width: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap
         }
     }
 }

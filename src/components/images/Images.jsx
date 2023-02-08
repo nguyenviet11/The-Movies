@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 function Images({ pathImage, width, titleAlt, stylesImage }) {
 
     const customLinkImages = (pathImage) => {
@@ -11,7 +13,7 @@ function Images({ pathImage, width, titleAlt, stylesImage }) {
     }
 
     return ( 
-        <img
+        <LazyLoadImage
             loading="lazy"
             className={handleStyleImages(stylesImage)}
             src={customLinkImages(pathImage)}

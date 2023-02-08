@@ -9,7 +9,12 @@ function TabUI({ header, border, themeTab, list }) {
 
     return (
         <div className="tabUI">
-            <Tabs header={header} border={border} themeTab={themeTab} active={active} onChange={handleChange}>
+            <Tabs   header={header} 
+                    border={border} 
+                    themeTab={themeTab} 
+                    active={active} 
+                    onChange={handleChange}
+            >
                 {list.map((item, index) => (
                     <Tab key={index} title={item.title}>
                         {item.content}
