@@ -13,14 +13,9 @@
 
 .medium {
     margin-bottom: 32px;
-    width: calc(
-        (100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) /
-            var(--numberOfDiscoverColumns)
-    );
-    max-width: calc(
-        (var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) /
-            var(--numberOfDiscoverColumns)
-    );
+    width: calc((100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns));
+    max-width: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns));
+
     .card-style1 {
         @include card-style1-df();
         box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
@@ -32,10 +27,12 @@
     width: 150px;
     margin-right: 20px;
     background-color: transparent;
+
     .card-style1 {
         @include card-style1-df();
         background-color: transparent;
     }
+
     .card-style1__image {
         min-height: calc(150px * 1.5);
         height: calc(150px * 1.5);
@@ -50,24 +47,11 @@
         background: #dbdbdb;
         width: 100%;
         display: inline-block;
-        height: calc(
-            (100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) /
-                var(--numberOfDiscoverColumns) * 1.5
-        );
-        max-height: calc(
-            (
-                    var(--maxPrimaryPageWidth) - 80px - 260px -
-                        (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))
-                ) / var(--numberOfDiscoverColumns) * 1.5
-        );
+        height: calc((100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
+        max-height: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
 
         overflow: hidden;
-        max-height: calc(
-            (
-                    var(--maxPrimaryPageWidth) - 80px - 260px -
-                        (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))
-                ) / var(--numberOfDiscoverColumns) * 1.5
-        );
+        max-height: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
     }
 
     &__wrapper {
@@ -92,12 +76,13 @@
         right: 8px;
         z-index: 0;
         opacity: 0.6;
+
         &:hover {
             opacity: 1;
-            filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg)
-                brightness(98%) contrast(99%);
+            filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg) brightness(98%) contrast(99%);
         }
     }
+
     &__click {
         text-decoration: none;
         font-weight: normal;
@@ -123,6 +108,7 @@
         color: inherit;
         box-sizing: border-box;
     }
+
     &__content {
         padding-bottom: 0;
         width: 100%;
@@ -131,18 +117,22 @@
         white-space: normal;
         align-content: flex-start;
         flex-wrap: wrap;
+
         .card-style1__chart {
             position: absolute;
             top: -16px;
         }
+
         .card-style1__name {
             font-weight: 700;
             padding-top: 8px;
             max-width: 150px;
+
             &:hover {
                 color: rgba(var(--tmdbLightBlue), 1);
             }
         }
+
         .card-style1__time {
             margin: 0;
             padding: 2px 0;
@@ -150,6 +140,7 @@
         }
     }
 }
+
 // ------------------------ CARD STYLES 2 ------------------------------
 .card-style2 {
     overflow: hidden;
@@ -165,11 +156,13 @@
     margin-right: 20px;
     border-radius: var(--imageBorderRadius);
     align-items: flex-start;
+
     &__image {
         min-width: 300px;
         width: 300px;
         height: calc(300px / 1.78);
     }
+
     &__wrapper {
         display: block;
         border-radius: var(--imageBorderRadius);
@@ -185,6 +178,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     &__trailer {
         display: block;
         width: 100%;
@@ -195,15 +189,18 @@
         &:hover {
             transform: scale(1.05);
         }
+
         &:hover .glyphicons_v2 {
             transform: scale(1.2);
         }
     }
+
     &__backdrop {
         width: 100%;
         height: 100%;
         display: block;
     }
+
     &__play {
         width: 300px;
         height: calc(300px / 1.78);
@@ -240,6 +237,7 @@
         @include glyphicons_v2-setup();
         filter: invert(1);
     }
+
     &__options {
         position: absolute;
         top: 8px;
@@ -249,8 +247,7 @@
 
         &:hover {
             opacity: 1;
-            filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg)
-                brightness(98%) contrast(99%);
+            filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg) brightness(98%) contrast(99%);
 
         }
 
@@ -283,6 +280,7 @@
                 color: rgba(var(--tmdbLightBlue), 1);
             }
         }
+
         .card-style2__description {
             font-size: 0.9em;
             margin: 0;
@@ -291,6 +289,7 @@
         }
     }
 }
+
 // ------------------------ CARD STYLES 3 ------------------------------
 .card-style3 {
     margin-top: 10px;
@@ -303,15 +302,19 @@
     min-width: 140px;
     width: 140px;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    box-shadow: var(--default-boxshadow);
     list-style: none;
+
     .card-style3__link {
         min-width: 138px;
-        height: 175px;
+        height: 200px;
         display: block;
         text-decoration: none;
         font-weight: normal;
+        box-shadow: var(--default-boxshadow);
+        border-radius: 8px;
     }
+
     .card-style3__profile {
         width: 100%;
         height: 100%;
@@ -319,24 +322,29 @@
 
     .card-style3__name {
         padding: 0 10px;
-        font-weight: 700;
+        font-weight: 500;
+        font-size: 0.9em;
     }
+
     .card-style3__charector {
         margin-bottom: 0;
         padding: 0 10px;
         font-size: 0.9em;
     }
 }
+
 // ------------------------ CARD STYLES 4 ------------------------------
 .cdstl4 {
     display: inline-block;
     float: none;
     width: 250px;
     margin: 0 15px 0 0;
+
     &__content {
         line-height: 0;
         overflow: hidden;
     }
+
     &__backdrop {
         top: 0;
         left: 0;
@@ -346,11 +354,13 @@
         position: relative;
         outline: none;
     }
+
     &__movie {
         display: flex;
         justify-content: space-between;
         margin-top: 4px;
     }
+
     &__title {
         font-weight: 400;
         font-size: 1em;
@@ -360,6 +370,7 @@
         display: inline-block;
         padding-right: 20px;
     }
+
     &__voteAverage {
         padding-top: 0;
         margin-right: 0;
@@ -372,6 +383,7 @@
 .card-wrap {
     display: flex;
     overflow-x: scroll;
+
     &::-webkit-scrollbar {
         width: 8px;
         height: 8px;

@@ -1,20 +1,25 @@
+import { useContext } from 'react';
+import Images from '../../../components/images/Images';
+import { listWidthImages } from '../../../constant';
+import { PersonContext } from '../Person';
 import '../Person.scss';
 
 function PosterPerson() {
-    return ( 
-        <section className="poster-person">
-          <div className="poster-person__profile">
-            <div className="poster-person__content">
-                <img 
-                    className="poster-person__img" 
-                    src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/i6fbYNn5jWA6swWtaqgzaj02RMc.jpg" 
-                    alt="Letitia Wright" 
-                    data-loaded="true" 
-                />
-            </div>
-          </div>
-        </section>
-    );
+  const listDataInPerson = useContext(PersonContext)
+  const personList = listDataInPerson.person;
+
+  return (
+    <section className="poster-person">
+      <div className="poster-person__profile">
+        <div className="poster-person__content">
+          <Images pathImage= {personList.profile_path} 
+                  width={listWidthImages.w300  } 
+                  titleAlt={personList.name} 
+          />
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default PosterPerson;

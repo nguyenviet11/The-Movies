@@ -86,6 +86,7 @@
 .header__title--small {
     font-size: 1.1em;
     font-weight: 600;
+    padding-bottom: 20px;
 }
 
 .description-person {
@@ -105,16 +106,21 @@
     &__icon {
         padding-left: 6px;
     }
+    &__text {
+        white-space: pre-line;
+    }
    
 }
 
 
 .list-film-person {
     width: 100%;
+
     .list-film-person__content {
-       
         display: flex;
         overflow-x: scroll;
+        max-height: 300px;
+
         &::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -129,6 +135,16 @@
 
 .career-description {
     padding: 40px 0;
+    &__wrap {
+        display: flex;
+        justify-content: start;
+        padding: 6px 20px;
+    }
+
+    &__time {
+        min-width: 36px
+    }
+
     &__filter {
         display: flex;
         justify-content: end;
@@ -146,11 +162,9 @@
         }
     }
     &__header {
-        margin-top: 30px;
-        margin-bottom: 0;
         font-weight: 600;
-        font-size: 1.3em;
-        margin: 0 0 4px 0;
+        font-size: 1.1em;
+        margin: 30px 0 4px 0;
     }
     &__card {
         width: 100%;
@@ -194,6 +208,15 @@
     }
     &__role {
         color: rgba(0,0,0,0.8);
-        font-weight: 500;
+        font-weight: 400;
     }
+}
+
+.read-more-button {
+    width: 100%;
+    z-index: 2;
+    height: 22px;
+    color: rgba(var(--tmdbLightBlue), 1);
+    display: flex;
+    justify-content: end;
 }

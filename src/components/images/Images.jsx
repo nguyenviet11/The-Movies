@@ -1,25 +1,28 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import './Images.scss';
 
-function Images({ pathImage, width, titleAlt, stylesImage }) {
+function Images({ pathImage, width, titleAlt }) {
 
     const customLinkImages = (pathImage) => {
-        return `https://image.tmdb.org/t/p/${width}/${pathImage}`
+        return `https://image.tmdb.org/t/p/${width}${pathImage}`
     }
 
-    const handleStyleImages = (stylesImage) => {
-        let classes;
-        if (stylesImage === 'poster') classes = "card-style1__poster"
-        return classes;
-    }
+    return (
+        <>
+            {
+                pathImage === null 
+                ? '' 
+                : 
+                <LazyLoadImage
+                    loading="lazy"
+                    className="images"
+                    src={customLinkImages(pathImage)}
+                    alt={titleAlt}
+                />
+            }
 
-    return ( 
-        <LazyLoadImage
-            loading="lazy"
-            className={handleStyleImages(stylesImage)}
-            src={customLinkImages(pathImage)}
-            alt={titleAlt}
-        />
-     );
+        </>
+    );
 }
 
 export default Images;
