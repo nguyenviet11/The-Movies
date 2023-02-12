@@ -1,31 +1,49 @@
 import './../../Person.scss'
 import CareerItem from './CareerItem';
 
-function CareerContent() {
+function CareerContent({ listData }) {
     return (
         <div >
-            <>
-                <h3 className="career-description__header">Acting</h3>
-                <table
-                    className="career-description__card"
-                    border="0"
-                    cellSpacing="0"
-                    cellPadding="0"
-                >
-                    <tbody className="career-description__tbody">
-                        <tr >
-                            <td>
-                                <table className="career-description__credit">
-                                    <tbody className="career-description__tbody">
-                                        <CareerItem />
+            {/*  cái to này cần lặp */}
+            {
+                listData.map((value, index) => (
+                    <div key={index}>
+                        <h3 className="career-description__header">{Object.keys(value)}</h3>
+                        <table
+                            className="career-description__card"
+                            border="0"
+                            cellSpacing="0"
+                            cellPadding="0"
+                        >
+                            {
+                                Object.values(value).map((item, index) => (
+                                    <tbody className="career-description__tbody" key={index}>
+                                        {
+                                            item.map((contentByYear, index) => (
+                                                <tr key={index}>
+                                                    <td>
+                                                        <table className="career-description__credit">
+                                                            <tbody className="career-description__tbody">
+                                                                {
+                                                                    contentByYear.map((child) => (
+                                                                        <CareerItem key={child.id} listContent = {child} />
+                                                                    ))
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
+                                        {/* cái tr này cần lặp */}
                                     </tbody>
-                                </table>
-                            </td>
-                        </tr>
+                                ))
+                            }
 
-                    </tbody>
-                </table>
-            </>
+                        </table>
+                    </div>
+                ))
+            }
         </div>
     );
 }

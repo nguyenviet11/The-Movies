@@ -21,8 +21,8 @@ const Person = () => {
     const getPerson = async () => {
         try {
             setIsLoading(true)
-            const responsePerson = await getPersonInformation(1083010);
-            const responseCredits = await getPersonCredit(1083010);
+            const responsePerson = await getPersonInformation(1267329);
+            const responseCredits = await getPersonCredit(1267329);
             setPersonInformation(responsePerson.data);
             setPersonCredits(responseCredits.data);
         }
