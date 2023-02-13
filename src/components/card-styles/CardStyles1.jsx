@@ -4,7 +4,7 @@ import PieChart from '../Chart/PieChart/PieChart';
 import './CardStyles.scss'
 
 function CardStyles1({ list, size }) {
-    console.log(list)
+
     return (
         <>
             {list.map((item) => (
