@@ -1,0 +1,138 @@
+.container {
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.tabs .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: #333;
+    transition: all 0.2s ease;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    margin: 0px 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 8px solid transparent;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1.1rem;
+    border-bottom: 4px solid transparent;
+    padding-bottom: 6px;
+
+    span {
+        margin-left: 8px;
+    }
+}
+
+
+
+.tab-item.active {
+    opacity: 1;
+    // padding-bottom: 6px;
+    border-bottom: 4px solid #333;
+}
+
+.tab-content {
+    padding-top: 14px;
+
+}
+
+.tab-pane {
+    color: #333;
+    display: none;
+
+    p {
+        padding: auto;
+    }
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+
+
+
+
+///discussions
+/// 
+
+
+.discussions {
+    &__item {
+        background: #fff;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        color: #000;
+        border: 1px solid rgba(227, 227, 227, 1);
+        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+
+        p {
+            font-weight: 300;
+            font-size: 0.9em;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            width: 60%;
+
+            img {
+                margin-right: 10px;
+                width: 45px;
+                height: 45px;
+                border-radius: 45px;
+            }
+
+            a {
+                &:hover {
+                    color: rgba(0, 0, 0, 0.5);
+
+                }
+            }
+
+        }
+
+        &-last {
+            text-align: right;
+            white-space: nowrap;
+            width: 230px;
+            padding-left: 20px;
+        }
+
+        a {
+            font-weight: 400;
+            font-size: 0.9em;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+

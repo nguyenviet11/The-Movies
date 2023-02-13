@@ -1,0 +1,102 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.2s linear;
+    background-color: var(--color-primary-dark);
+
+    .nav {
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+        .link__logo {
+            display: block;
+            margin-right: 16px;
+            width: 154px;
+            height: 20px;
+            .logo {
+                display: block;
+                width: 100%;
+            }
+        }
+        .nav__list {
+            padding: 0;
+            background: transparent;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav__item {
+            margin-right: 14px;
+            position: relative;
+            cursor: pointer;
+            .navItem__title {
+                color: var(--white);
+                padding: 8px;
+                font-weight: 700;
+                font-size: 1em;
+            }
+            &:hover .item__menu {
+                display: block;
+            }
+
+            .item__menu {
+                display: none;
+            }
+        }
+    }
+
+    .manipulation {
+        display: flex;
+        align-items: center;
+        color: var(--white);
+        font-size: 1em;
+        font-weight: 700;
+        padding-right: 40px;
+
+        .manipulation__iconPlus,
+        .manipulation__iconSearch,
+        .manipulation__languages
+        {
+            padding: 8px;
+            margin-right: 14px;
+            cursor: pointer;
+        }
+
+        .manipulation__iconPlus {
+            font-size: 20px;
+            position: relative;
+        }
+        .manipulation__iconSearch {
+            color: rgb(1, 180, 228);
+            font-size: 20px;
+        }
+        .manipulation__languages {
+            border: 1px solid #fff;
+            border-radius: 4px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            font-size: 0.8em;
+            position: relative;
+            
+            &:hover {
+                background-color: var(--white);
+                color: var(--font-color);
+            }
+            .manipulation__languagesText {
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
