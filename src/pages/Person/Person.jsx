@@ -9,6 +9,7 @@ import PosterPerson from './components/PosterPerson';
 import SocialPerson from './components/SocialPerson';
 import './Person.scss';
 import { getPersonCredit, getPersonInformation } from './services/api';
+import Example from './components/SelectMenu';
 
 export const PersonContext = createContext()
 
@@ -21,8 +22,8 @@ const Person = () => {
     const getPerson = async () => {
         try {
             setIsLoading(true)
-            const responsePerson = await getPersonInformation(1267329);
-            const responseCredits = await getPersonCredit(1267329);
+            const responsePerson = await getPersonInformation(31);
+            const responseCredits = await getPersonCredit(31);
             setPersonInformation(responsePerson.data);
             setPersonCredits(responseCredits.data);
         }
@@ -51,8 +52,9 @@ const Person = () => {
                         <Layout>
                             <div className="person__wrapper">
                                 <div className="person__side-bar">
+                                    <Example />
                                     <PosterPerson />
-                                    <SocialPerson />
+                                    {/* <SocialPerson /> */}
                                     <InfoPerson />
                                     <div className="person__button">
                                         <Button rounded blueLight>EDIT PAGE</Button>
@@ -60,7 +62,7 @@ const Person = () => {
                                 </div>
                                 <div className="person__side-content">
                                     <DescriptionPerson />
-                                    <ListFilmPerson />
+                                    {/* <ListFilmPerson /> */}
                                     <CareerDescription />
                                 </div>
                             </div>

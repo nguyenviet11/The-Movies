@@ -1,15 +1,19 @@
 import moment from "moment";
 import _ from 'lodash';
 
+// -------------------------------------------------------------------------------------------------
 
-export const handlePushYear = (array) => {
-    const newData = [];
-    array.forEach((value) => {
-        const year = moment(value.release_date).year();
-        newData.push({ ...value, year });
-    })
-    return newData;
-} // Fn add year to array
+// -------------------------------------------------------------------------------------------------
+
+
+// export const handlePushYear = (array) => {
+//     const newData = [];
+//     array.forEach((value) => {
+//         const year = moment(value.release_date).year();
+//         newData.push({ ...value, year });
+//     })
+//     return newData;
+// } // Fn add year to array
 
 export const groupBy = (objectArray, property) => {
     return objectArray.reduce((acc, obj) => {
@@ -98,4 +102,4 @@ export const handleGetListKey = (list) => {
 
 export const handleGetResultByKeyWord = (list, keyword) => {
     return list[keyword]
-  }
+}
